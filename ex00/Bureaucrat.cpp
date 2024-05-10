@@ -5,70 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 16:37:33 by subpark           #+#    #+#             */
-/*   Updated: 2024/04/04 17:47:22 by subpark          ###   ########.fr       */
+/*   Created: 2024/05/09 16:56:20 by subpark           #+#    #+#             */
+/*   Updated: 2024/05/10 19:28:19 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(std::string const &name, int grade): _name(name)
+Bureaucrat::Bureaucrat(string name, int grade) : _name(name)
 {
-	try
-	{
-		if (grade < 1 || grade > 150)
-			throw std::invalid_argument("Score is Invalid");
-		this->_grade = grade;
-	}
-	catch (const std::exception &ex)
-	{
-		std::cerr << "Exception caught in Constructor: " << ex.what() << std::endl;
-		throw;
-	}
+	if (grade > 150)
+		throw
+	_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy): _name(copy._name)
+Bureaucrat::Bureaucrat(Bureaucrat &copy) :_name(copy._name)
 {
-	this->_grade = copy._grade;
+	this->_grade = copy.getGrade();
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat &copy)
+Bureaucrat &Bureaucrat::operator=(Bureaucrat &copy)
 {
+	//cannot re-assign const member
+	//https://stackoverflow.com/questions/4136156/const-member-and-assignment-operator-how-to-avoid-the-undefined-behavior
 	if (this != &copy)
-	{
-		//this->_name = std::string(copy._name);
-		this->_grade = copy._grade;
-	}
-	return *this;
+		this->_grade = copy.getGrade();
+	return (*this);
 }
 
-std::ostream &Bureaucrat::operator<<(std::ostream &os)
-{
-	os << getName() << ", bureaucrat grade " << getGrade();
-	return os;
-}
-
-void	Bureaucrat::putGrade(int grade)
-{
-	try
-	{
-		if (grade < 1 || grade > 150)
-			throw std::invalid_argument("Score is Invalid");
-		this->_grade = grade;
-	}
-	catch (const std::exception &ex)
-	{
-		std::cerr << "Exception caught in putGrade: " << ex.what() << std::endl;
-		throw;
-	}
-}
-
-std::string Bureaucrat::getName()
+string	Bureaucrat::getName()
 {
 	return (_name);
 }
 
-int	Bureaucrat::getGrade()
+int Bureaucrat::getGrade()
 {
 	return (_grade);
+}
+
+ostream &operator<<(ostream &os, Bureaucrat &bureau)
+{
+	os << bureau.getName() << ", bureaucrat grade " << bureau.getGrade();
+	return (os);
 }

@@ -5,47 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 16:37:20 by subpark           #+#    #+#             */
-/*   Updated: 2024/04/04 17:58:34 by subpark          ###   ########.fr       */
+/*   Created: 2024/05/09 16:56:00 by subpark           #+#    #+#             */
+/*   Updated: 2024/05/10 19:25:12 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
-
-#include <string>
 #include <iostream>
+#include <string>
 
-class Bureaucrat{
-	private:
-		std::string const	_name;
-		int					_grade;
+using namespace std;
 
+class Bureaucrat
+{
 	public:
-		Bureaucrat() = default; //curious about how name will be filled
-		Bureaucrat(std::string const &name, int grade); // Parameterized constructor
-		Bureaucrat(const Bureaucrat &copy);
-		Bureaucrat &operator=(const Bureaucrat &copy);
-		std::ostream &operator<<(std::ostream &os);
+		Bureaucrat() = default; //curious about const string initialization
+		Bureaucrat(string name, int grade);
+		Bureaucrat(Bureaucrat &copy);
+		Bureaucrat &operator=(Bureaucrat &copy);
 		~Bureaucrat() = default;
-		void		putGrade(int grade);
-		std::string	getName();
-		int			getGrade();
-
-		class GradeTooLowException : public std::exception
-		{
-			public:
-				const char  *what() const throw(){
-					return ("TooLowException");
-				}
-		};
-		class GradeTooHighException : public std::exception
-		{
-			public:
-				const char  *what() const throw(){
-					return ("TooHighException");
-				}
-		};
+		string	getName();
+		int		getGrade();
+		static void	GradeTooHighExeption();
+		static void	GradeTooLowException();
+	private:
+		const string	_name;
+		int				_grade;
 };
 
-#endif
+ostream& operator<<(ostream &os, Bureaucrat &bureau);
