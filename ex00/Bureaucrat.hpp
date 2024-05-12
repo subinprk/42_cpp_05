@@ -6,9 +6,12 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:00 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/12 19:05:20 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/12 19:19:04 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <string>
@@ -43,3 +46,5 @@ class Bureaucrat
 };
 
 std::ostream& operator<<(std::ostream &os, Bureaucrat &bureau);
+
+#endif

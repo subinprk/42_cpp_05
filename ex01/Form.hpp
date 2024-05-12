@@ -6,12 +6,15 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:15:03 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/12 19:04:04 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/12 19:27:48 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef FORM_HPP
+# define FORM_HPP
+# include <string>
+# include <iostream>
+# include "Bureaucrat.hpp"
 
 class Form
 {
@@ -24,7 +27,7 @@ class Form
 		int		getSignG();
 		int		getExeG();
 		bool	getBool();
-
+		void	beSigned(Bureaucrat &b);
 		class GradeTooHighException: public std::exception
 		{
 			virtual const char *what() const throw();
@@ -48,3 +51,5 @@ std::ostream &operator<<(std::ostream &os, Form &form)
 		<< ", is getted: " << form.getBool();
 	return (os);
 }
+
+#endif

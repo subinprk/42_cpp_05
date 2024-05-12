@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:20 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/12 19:05:10 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/12 19:25:36 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,12 +71,12 @@ void Bureaucrat::putGrade(int grade)
 	}
 }
 
-void Bureaucrat::GradeUp()
+void Bureaucrat::gradeUp()
 {
 	putGrade(_grade - 1);
 }
 
-void Bureaucrat::GradeDown()
+void Bureaucrat::gradeDown()
 {
 	putGrade(_grade + 1);
 }
