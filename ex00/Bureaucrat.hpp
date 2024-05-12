@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siun <siun@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:00 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/11 22:41:43 by siun             ###   ########.fr       */
+/*   Updated: 2024/05/12 19:05:20 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 #include <string>
 #include <stdexcept>
 
-using namespace std;
-
 class Bureaucrat
 {
 	public:
 		Bureaucrat(); //curious about const string initialization
-		Bureaucrat(string name, int grade);
+		Bureaucrat(std::string name, int grade);
 		Bureaucrat(Bureaucrat &copy);
 		Bureaucrat &operator=(Bureaucrat &copy);
 		~Bureaucrat() = default;
-		string	getName();
+		std::string	getName();
 		int		getGrade();
 		void	putGrade(int grade);
 		void	GradeUp();
@@ -40,8 +38,8 @@ class Bureaucrat
 				virtual const char* what() const throw();
 		};
 	private:
-		const string	_name;
+		const std::string	_name;
 		int				_grade;
 };
 
-ostream& operator<<(ostream &os, Bureaucrat &bureau);
+std::ostream& operator<<(std::ostream &os, Bureaucrat &bureau);

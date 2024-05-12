@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siun <siun@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:20 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/11 22:41:48 by siun             ###   ########.fr       */
+/*   Updated: 2024/05/12 19:05:10 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat() : _name("")
 	_grade = -1;
 }
 
-Bureaucrat::Bureaucrat(string name, int grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	_grade = grade;
 }
@@ -36,7 +36,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat &copy)
 	return (*this);
 }
 
-string	Bureaucrat::getName()
+std::string	Bureaucrat::getName()
 {
 	return (_name);
 }
@@ -60,13 +60,13 @@ void Bureaucrat::putGrade(int grade)
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
 		_grade = -1;
-		cout << e.what() << endl;
+		std::cout << e.what() << std::endl;
 		return ;
 	}
 	catch (Bureaucrat::GradeTooHighExeption &e)
 	{
 		_grade = -1;
-		cout << e.what() << endl;
+		std::cout << e.what() << std::endl;
 		return ;
 	}
 }
@@ -91,7 +91,7 @@ const char * Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Grade is too low");
 }
 
-ostream &operator<<(ostream &os, Bureaucrat &bureau)
+std::ostream &operator<<(std::ostream &os, Bureaucrat &bureau)
 {
 	os << bureau.getName() << ", bureaucrat grade " << bureau.getGrade();
 	return (os);
