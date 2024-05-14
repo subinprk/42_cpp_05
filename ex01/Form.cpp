@@ -6,11 +6,12 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:14:52 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/12 19:38:38 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/14 14:44:32 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form(std::string name, int signGrade, int exeGrade): _name(name),
 							_signGrade(signGrade), _exeGrade(exeGrade)
@@ -58,18 +59,26 @@ bool Form::getBool()
 
 void	Form::beSigned(Bureaucrat &b)
 {
-	try
-	{
-		if (b.getGrade() <= _signGrade)
-			std::cout << b.getName() << " signed " << _name << std::endl;
-		else
+	//try
+//	{
+		// if (b.getGrade() <= _signGrade)
+		// {
+		// 	std::cout << b.getName() << " signed " << _name << std::endl;
+		// 	_isSigned = true;
+		// }
+		if (b.getGrade() > _signGrade)
+		//else
 			throw GradeTooLowException();
-	}
-	catch(Form::GradeTooLowException &e)
-	{
-		std::cout << b.getName() << " couldn't sign "
-			<< _name << " because " << e.what() << std::endl;
-	}
+		else if (b.getGrade() < _exeGrade)
+			throw GradeTooHighException();
+		else
+			_isSigned = true;
+//	}
+	// catch(Form::GradeTooLowException &e)
+	// {
+	// 	std::cout << b.getName() << " couldn't sign "
+	// 		<< this->_name << " because " << e.what() << std::endl;
+	// }
 }
 
 const char *Form::GradeTooLowException::what() const throw()
@@ -80,4 +89,12 @@ const char *Form::GradeTooLowException::what() const throw()
 const char *Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too High");
+}
+
+std::ostream &operator<<(std::ostream &os, Form &form)
+{
+	os << form.getName() << " sign Grade is " << form.getSignG()
+		<< ", execution Grade is " << form.getExeG()
+		<< ", is getted: " << form.getBool();
+	return (os);
 }

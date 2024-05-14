@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:00 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/12 19:25:19 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/14 14:30:53 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -29,6 +31,7 @@ class Bureaucrat
 		void	putGrade(int grade);
 		void	gradeUp();
 		void	gradeDown();
+		void	signForm(Form &form);
 		class	GradeTooHighExeption : public std::exception
 		{
 			public:
@@ -41,7 +44,7 @@ class Bureaucrat
 		};
 	private:
 		const std::string	_name;
-		int				_grade;
+		int					_grade;
 };
 
 std::ostream& operator<<(std::ostream &os, Bureaucrat &bureau);

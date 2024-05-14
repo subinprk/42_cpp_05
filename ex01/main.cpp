@@ -3,78 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siun <siun@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:05 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/11 22:39:56 by siun             ###   ########.fr       */
+/*   Updated: 2024/05/14 14:46:11 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-	Bureaucrat a("A", 1);
+	Bureaucrat a("A", 12);
 	Bureaucrat b("B", 150);
 	Bureaucrat c("C", 151);
 	Bureaucrat d("D", 0);
 	Bureaucrat e("E", 2);
 	Bureaucrat f;
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
-	cout << f << endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	std::cout << d << std::endl;
+	std::cout << e << std::endl;
+	std::cout << f << std::endl;
 
-	a.GradeUp();
-	b.GradeDown();
-	c.GradeUp();
-	d.GradeDown();
-	e.GradeUp();
+	a.gradeUp();
+	b.gradeDown();
+	c.gradeUp();
+	d.gradeDown();
+	e.gradeUp();
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+	// std::cout << c << std::endl;
+	// std::cout << d << std::endl;
+	// std::cout << e << std::endl;
 
-	a.GradeUp();
-	b.GradeDown();
-	c.GradeUp();
-	d.GradeDown();
-	e.GradeUp();
+	// a.gradeUp();
+	// b.gradeDown();
+	// c.gradeUp();
+	// d.gradeDown();
+	// e.gradeUp();
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	Form formA("Math", 50, 10);
+	a.signForm(formA);
+	e.signForm(formA);
+	c.signForm(formA);
 
-	a.GradeUp();
-	b.GradeDown();
-	c.GradeUp();
-	d.GradeDown();
-	e.GradeUp();
+	std::cout << formA << std::endl;
+	
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+	// std::cout << c << std::endl;
+	// std::cout << d << std::endl;
+	// std::cout << e << std::endl;
 
-	a.GradeUp();
-	b.GradeDown();
-	c.GradeUp();
-	d.GradeDown();
-	e.GradeUp();
+	// a.gradeUp();
+	// b.gradeDown();
+	// c.gradeUp();
+	// d.gradeDown();
+	// e.gradeUp();
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+	// std::cout << c << std::endl;
+	// std::cout << d << std::endl;
+	// std::cout << e << std::endl;
+
+	// a.gradeUp();
+	// b.gradeDown();
+	// c.gradeUp();
+	// d.gradeDown();
+	// e.gradeUp();
+
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+	// std::cout << c << std::endl;
+	// std::cout << d << std::endl;
+	// std::cout << e << std::endl;
 
 	return (0);
 }

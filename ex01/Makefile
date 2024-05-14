@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: siun <siun@student.42.fr>                  +#+  +:+       +#+         #
+#    By: subpark <subpark@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 16:36:52 by subpark           #+#    #+#              #
-#    Updated: 2024/05/11 22:25:28 by siun             ###   ########.fr        #
+#    Updated: 2024/05/14 13:43:11 by subpark          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = Bureaucrat.cpp main.cpp
-HDRS = Bureaucrat.hpp
+SRC = Bureaucrat.cpp Form.cpp main.cpp
+HDRS = Bureaucrat.hpp Form.hpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
