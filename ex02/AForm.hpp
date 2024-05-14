@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AForm_HPP
+# define AForm_HPP
 # include <string>
 # include <iostream>
 
 class Bureaucrat;
-class Form
+class AForm
 {
 	public:
-		Form(std::string name, int signGrage, int exeGrade);
-		Form(const Form &copy);
-		Form &operator = (const Form &copy);
-		~Form() = default;
+		AForm(std::string name, int signGrage, int exeGrade);
+		AForm(const AForm &copy);
+		AForm &operator = (const AForm &copy);
+		~AForm() = default;
 		std::string	getName();
 		int		getSignG();
 		int		getExeG();
@@ -46,6 +46,6 @@ class Form
 		bool				_isSigned;
 };
 
-std::ostream &operator<<(std::ostream &os, Form &form);
+std::ostream &operator<<(std::ostream &os, AForm &AForm);
 
 #endif

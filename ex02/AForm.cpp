@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(std::string name, int signGrade, int exeGrade): _name(name),
+AForm::AForm(std::string name, int signGrade, int exeGrade): _name(name),
 							_signGrade(signGrade), _exeGrade(exeGrade)
 {
 	try
@@ -21,34 +21,34 @@ Form::Form(std::string name, int signGrade, int exeGrade): _name(name),
 		if (signGrade > 150 || exeGrade > 150)
 		{
 			signGrade = -1;
-			throw(Form::GradeTooLowException());
+			throw(AForm::GradeTooLowException());
 		}
 		else if (signGrade < exeGrade)
 		{
 			signGrade = -1;
-			throw(Form::GradeTooLowException());
+			throw(AForm::GradeTooLowException());
 		}
 		else if (signGrade < 1 || exeGrade < 1)
 		{
 			signGrade = -1;
-			throw(Form::GradeTooLowException());
+			throw(AForm::GradeTooLowException());
 		}
 		else 
 			std::cout << *this << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << "cannot make form " << name << " because " << e.what() << '\n';
+		std::cerr << "cannot make AForm " << name << " because " << e.what() << '\n';
 	}
 }
 
-Form::Form(const Form &copy): _name(copy._name), _signGrade(copy._signGrade),
+AForm::AForm(const AForm &copy): _name(copy._name), _signGrade(copy._signGrade),
 						_exeGrade(copy._exeGrade)
 {
 	_isSigned = copy._isSigned;
 }
 
-Form &Form::operator=(const Form &copy)
+AForm &AForm::operator=(const AForm &copy)
 {
 	if (this != &copy)
 	{
@@ -57,27 +57,27 @@ Form &Form::operator=(const Form &copy)
 	return (*this);
 }
 
-std::string  Form::getName()
+std::string  AForm::getName()
 {
 	return (_name);
 }
 
-int Form::getSignG()
+int AForm::getSignG()
 {
 	return (_signGrade);
 }
 
-int Form::getExeG()
+int AForm::getExeG()
 {
 	return (_exeGrade);
 }
 
-bool Form::getBool()
+bool AForm::getBool()
 {
 	return (_isSigned);
 }
 
-void	Form::beSigned(Bureaucrat &b)
+void	AForm::beSigned(Bureaucrat &b)
 {
 	//try
 //	{
@@ -94,27 +94,27 @@ void	Form::beSigned(Bureaucrat &b)
 		else
 			_isSigned = true;
 //	}
-	// catch(Form::GradeTooLowException &e)
+	// catch(AForm::GradeTooLowException &e)
 	// {
 	// 	std::cout << b.getName() << " couldn't sign "
 	// 		<< this->_name << " because " << e.what() << std::endl;
 	// }
 }
 
-const char *Form::GradeTooLowException::what() const throw()
+const char *AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too Low");
 }
 
-const char *Form::GradeTooHighException::what() const throw()
+const char *AForm::GradeTooHighException::what() const throw()
 {
 	return ("Grade is too High");
 }
 
-std::ostream &operator<<(std::ostream &os, Form &form)
+std::ostream &operator<<(std::ostream &os, AForm &AForm)
 {
-	os << form.getName() << " sign Grade is " << form.getSignG()
-		<< ", execution Grade is " << form.getExeG()
-		<< ", is getted: " << form.getBool();
+	os << AForm.getName() << " sign Grade is " << AForm.getSignG()
+		<< ", execution Grade is " << AForm.getExeG()
+		<< ", is getted: " << AForm.getBool();
 	return (os);
 }
