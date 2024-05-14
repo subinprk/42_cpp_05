@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 17:15:03 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/14 14:40:55 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/14 17:22:01 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Bureaucrat;
 class Form
 {
 	public:
+		Form() = default;
 		Form(std::string name, int signGrage, int exeGrade);
 		Form(const Form &copy);
 		Form &operator = (const Form &copy);

@@ -77,6 +77,11 @@ bool AForm::getBool()
 	return (_isSigned);
 }
 
+bool AForm::putBool(bool x)
+{
+	_isSigned = x;
+}
+
 void	AForm::beSigned(Bureaucrat &b)
 {
 	//try

@@ -19,14 +19,16 @@ class Bureaucrat;
 class AForm
 {
 	public:
+		AForm() = default;
 		AForm(std::string name, int signGrage, int exeGrade);
 		AForm(const AForm &copy);
 		AForm &operator = (const AForm &copy);
 		~AForm() = default;
-		std::string	getName();
+		virtual std::string	getName() = 0;
 		int		getSignG();
 		int		getExeG();
 		bool	getBool();
+		bool	putBool(bool x);
 		void	beSigned(Bureaucrat &b);
 		class GradeTooHighException: public std::exception
 		{
