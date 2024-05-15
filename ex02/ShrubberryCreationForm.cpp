@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:05:52 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 15:33:01 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:08:03 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Shurbberrycreationform::~Shurbberrycreationform()
     _shurb.close();
 }
 
-void Shurbberrycreationform::printTree(std::string arg)
+void Shurbberrycreationform::execute(Bureaucrat &a)
 {
 //     std::system("ls > ___tmp");
 //     //std::string str;
@@ -48,7 +48,13 @@ void Shurbberrycreationform::printTree(std::string arg)
 //     std::string line;
 //     while (std::getline);
 // }
-	_shurb << TREE;
+    if (a.getGrade() > getSignG())
+    //else
+        throw GradeTooLowException();
+    else if (a.getGrade() < getExeG())
+        throw GradeTooHighException();
+    else
+	    _shurb << TREE;
 }
 
 

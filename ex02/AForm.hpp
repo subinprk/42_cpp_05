@@ -24,7 +24,7 @@ class AForm
 		AForm(const AForm &copy);
 		AForm &operator = (const AForm &copy);
 		~AForm() = default;
-		virtual std::string	getName() = 0;
+		std::string	getName();
 		int		getSignG();
 		int		getExeG();
 		bool	getBool();
@@ -40,6 +40,7 @@ class AForm
 			public:
 				virtual const char *what() const throw();
 		};
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 	private:
 		const std::string	_name;
