@@ -6,18 +6,20 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:05:52 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:46:57 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 18:33:11 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShurbberryCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-Shurbberrycreationform::Shurbberrycreationform(Bureaucrat &a)
+Shurbberrycreationform::Shurbberrycreationform(/*Bureaucrat &a*/)
     :AForm("Shurbberrycreationform", 145, 137)
 {
     //std::ofstream shurb(a.getName() + "_shrubbery", ios_base::out);
-    _shurb.open(a.getName() + "_shrubbery");
+    // _shurb.open(a.getName() + "_shrubbery");
+    // if (_shurb)
+    //     std::cerr << "Failed to open file\n";
     
 }
 
@@ -35,29 +37,28 @@ Shurbberrycreationform &Shurbberrycreationform::operator=(Shurbberrycreationform
 
 Shurbberrycreationform::~Shurbberrycreationform()
 {
-    _shurb.close();
+   // _shurb.close();
 }
 
-void Shurbberrycreationform::execute(Bureaucrat &a)
+void Shurbberrycreationform::execute(Bureaucrat const &a) const
 {
-//     std::system("ls > ___tmp");
-//     //std::string str;
-//     std::ifstream ls("___tmp");
-    
-//     if (!ls.is_open())
-//         std::cerr << "file open error\n";
-//     std::string line;
-//     while (std::getline);
-// }
     if (a.getGrade() > getSignG())
-    //else
         throw GradeTooLowException();
     else if (a.getGrade() < getExeG())
         throw GradeTooHighException();
     else
-	    _shurb << TREE;
+	{
+        std::ofstream ofs(a.getName() + "_shrubbery");
+        if (!ofs) {
+            throw std::ios_base::failure("Failed to open file");
+        }
+        ofs << TREE;
+        if (!ofs) {
+            throw std::ios_base::failure("Failed to write to file");
+        }
+        ofs.close();
+    }
 }
-
 
 // void Shurbberrycreationform::Tree::getDir()
 // {

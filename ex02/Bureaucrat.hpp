@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:00 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:17:39 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:54:29 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat &copy);
 		Bureaucrat &operator=(Bureaucrat &copy);
 		~Bureaucrat() = default;
-		std::string	getName();
-		int		getGrade();
+		std::string	getName() const;
+		int		getGrade() const;
 		void	putGrade(int grade);
 		void	gradeUp();
 		void	gradeDown();

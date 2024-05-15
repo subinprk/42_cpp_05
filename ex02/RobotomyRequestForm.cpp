@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:06:24 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:46:36 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 17:02:54 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,18 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 }
 
-const char *AForm::GradeTooLowException::what() const throw()
-{
-    std::cout << "Robotomy failed" << std::endl;
-	return ("Grade is too Low");
-}
-
-const char *AForm::GradeTooHighException::what() const throw()
-{
-    std::cout << "Robotomy failed" << std::endl;
-	return ("Grade is too High");
-}
-
-void    RobotomyRequestForm::execute(Bureaucrat &a)
+void    RobotomyRequestForm::execute(Bureaucrat const &a) const
 {
     if (a.getGrade() > getSignG())
+    {
+        std::cout << "Robotomy failed" << std::endl;
         throw GradeTooLowException();
+    }
     else if (a.getGrade() < getExeG())
+    {
+        std::cout << "Robotomy failed" << std::endl;
         throw GradeTooHighException();
+    }
     else
 		std::cout << "BRRRRRRRRRRRRRR\n" << a.getName() << " was robotomized" << std::endl;
 }

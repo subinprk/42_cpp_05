@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:06:17 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:46:42 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 17:03:30 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm(RobotomyRequestForm &copy);
         RobotomyRequestForm &operator=(RobotomyRequestForm &copy);
         ~RobotomyRequestForm();
-        void    execute(Bureaucrat &a);
+        void    execute(Bureaucrat const &a) const;
 };
 
 #endif

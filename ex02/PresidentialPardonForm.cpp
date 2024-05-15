@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:06:49 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:43:51 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 18:41:54 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(PresidentialPardonForm
     return (*this);
 }
 
-void    PresidentialPardonForm::execute(Bureaucrat &a)
+void    PresidentialPardonForm::execute(Bureaucrat const &a) const
 {
    if (a.getGrade() > getSignG())
     //else
@@ -39,5 +39,5 @@ void    PresidentialPardonForm::execute(Bureaucrat &a)
     else if (a.getGrade() < getExeG())
         throw GradeTooHighException();
     else
-		std::cout << a.getName() << "has been pardoned by Zaphod Beeblebrox" << std::endl;
+		std::cout << a.getName() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

@@ -23,11 +23,11 @@ class AForm
 		AForm(std::string name, int signGrage, int exeGrade);
 		AForm(const AForm &copy);
 		AForm &operator = (const AForm &copy);
-		~AForm() = default;
+		virtual ~AForm() = default;
 		std::string	getName() const;
-		int		getSignG();
-		int		getExeG();
-		bool	getBool();
+		int		getSignG() const;
+		int		getExeG() const;
+		bool	getBool() const;
 		void	putBool(bool x);
 		void	beSigned(Bureaucrat &b);
 		class GradeTooHighException: public std::exception

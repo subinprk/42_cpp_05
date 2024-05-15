@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:20 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:28:35 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 18:39:13 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat &copy)
 	return (*this);
 }
 
-std::string	Bureaucrat::getName()
+std::string	Bureaucrat::getName() const
 {
 	return (_name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return (_grade);
 }
@@ -120,7 +120,7 @@ void Bureaucrat::executeForm(AForm const &form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << _name << " can't register " << form.getName() << " because " << e.what() << '\n';
 		return ;
 	}
 	std::cout << _name << " executed " << form.getName() << std::endl;

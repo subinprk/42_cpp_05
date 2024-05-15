@@ -62,17 +62,17 @@ std::string  AForm::getName() const
 	return (_name);
 }
 
-int AForm::getSignG()
+int AForm::getSignG() const
 {
 	return (_signGrade);
 }
 
-int AForm::getExeG()
+int AForm::getExeG() const
 {
 	return (_exeGrade);
 }
 
-bool AForm::getBool()
+bool AForm::getBool() const
 {
 	return (_isSigned);
 }
