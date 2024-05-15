@@ -6,12 +6,15 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:05 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/14 14:47:56 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:47:58 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShurbberryCreationForm.hpp"
 
 int main()
 {
@@ -35,56 +38,14 @@ int main()
 	d.gradeDown();
 	e.gradeUp();
 
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << c << std::endl;
-	// std::cout << d << std::endl;
-	// std::cout << e << std::endl;
+	// AForm formA("Math", 50, 10);
+	// AForm formB("weird", -1, 100);
+	// a.signForm(formA);
+	// e.signForm(formA);
+	// c.signForm(formA);
 
-	// a.gradeUp();
-	// b.gradeDown();
-	// c.gradeUp();
-	// d.gradeDown();
-	// e.gradeUp();
-
-	Form formA("Math", 50, 10);
-	Form formB("weird", -1, 100);
-	a.signForm(formA);
-	e.signForm(formA);
-	c.signForm(formA);
-
-	std::cout << formA << std::endl;
+	// std::cout << formA << std::endl;
 	
-
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << c << std::endl;
-	// std::cout << d << std::endl;
-	// std::cout << e << std::endl;
-
-	// a.gradeUp();
-	// b.gradeDown();
-	// c.gradeUp();
-	// d.gradeDown();
-	// e.gradeUp();
-
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << c << std::endl;
-	// std::cout << d << std::endl;
-	// std::cout << e << std::endl;
-
-	// a.gradeUp();
-	// b.gradeDown();
-	// c.gradeUp();
-	// d.gradeDown();
-	// e.gradeUp();
-
-	// std::cout << a << std::endl;
-	// std::cout << b << std::endl;
-	// std::cout << c << std::endl;
-	// std::cout << d << std::endl;
-	// std::cout << e << std::endl;
 
 	return (0);
 }

@@ -6,30 +6,31 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:06:24 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:14:24 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:46:36 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequest::RobotomyRequest(Bureaucrat &a)
+RobotomyRequestForm::RobotomyRequestForm()
     :AForm("RobotomyRequest", 25, 5)
 {
     
 }
 
-RobotomyRequest::RobotomyRequest(RobotomyRequest &copy)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &copy)
     :AForm("RobotomyRequest", 25, 5)
 {
     putBool(copy.getBool());
 }
 
-RobotomyRequest &RobotomyRequest::operator=(RobotomyRequest &copy)
+RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm &copy)
 {
     putBool(copy.getBool());
+    return (*this);
 }
 
-RobotomyRequest::~RobotomyRequest()
+RobotomyRequestForm::~RobotomyRequestForm()
 {
 
 }

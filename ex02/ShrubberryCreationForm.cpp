@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:05:52 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:08:03 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:46:57 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ Shurbberrycreationform::Shurbberrycreationform(Shurbberrycreationform &copy)
 Shurbberrycreationform &Shurbberrycreationform::operator=(Shurbberrycreationform &copy)
 {
     putBool(copy.getBool());
+    return (*this);
 }
 
 Shurbberrycreationform::~Shurbberrycreationform()

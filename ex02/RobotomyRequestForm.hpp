@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:06:17 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 15:46:53 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:46:42 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 # include "Bureaucrat.hpp"
 # include "AForm.hpp"
 
-class RobotomyRequest : public AForm
+class RobotomyRequestForm : public AForm
 {
     public:
-        RobotomyRequest(Bureaucrat &a);
-        RobotomyRequest(RobotomyRequest &copy);
-        RobotomyRequest &operator=(RobotomyRequest &copy);
-        ~RobotomyRequest();
-        void    execute();
+        RobotomyRequestForm();
+        RobotomyRequestForm(RobotomyRequestForm &copy);
+        RobotomyRequestForm &operator=(RobotomyRequestForm &copy);
+        ~RobotomyRequestForm();
+        void    execute(Bureaucrat &a);
 };
 
 #endif

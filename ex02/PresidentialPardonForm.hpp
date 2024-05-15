@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 15:07:02 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 16:02:43 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/15 16:44:31 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class PresidentialPardonForm : public AForm
 {
     public:
-        PresidentialPardonForm(Bureaucrat &a);
+        PresidentialPardonForm();
         PresidentialPardonForm(PresidentialPardonForm &copy);
         PresidentialPardonForm &operator=(PresidentialPardonForm &copy);
         ~PresidentialPardonForm() = default;

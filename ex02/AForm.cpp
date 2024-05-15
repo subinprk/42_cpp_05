@@ -57,7 +57,7 @@ AForm &AForm::operator=(const AForm &copy)
 	return (*this);
 }
 
-std::string  AForm::getName()
+std::string  AForm::getName() const
 {
 	return (_name);
 }
@@ -77,7 +77,7 @@ bool AForm::getBool()
 	return (_isSigned);
 }
 
-bool AForm::putBool(bool x)
+void AForm::putBool(bool x)
 {
 	_isSigned = x;
 }
