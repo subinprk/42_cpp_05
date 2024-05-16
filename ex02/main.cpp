@@ -6,7 +6,7 @@
 /*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:05 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/15 18:44:54 by subpark          ###   ########.fr       */
+/*   Updated: 2024/05/16 16:10:43 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main()
 		Shurbberrycreationform *c = new Shurbberrycreationform();
 		PresidentialPardonForm *d = new PresidentialPardonForm();
 
-		Bureaucrat num2("2nd", 140);
+		Bureaucrat num2("5th", 140);
 
 		a->executeForm(*b);
 		a->executeForm(*c);

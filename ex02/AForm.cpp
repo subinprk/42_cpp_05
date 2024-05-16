@@ -14,25 +14,16 @@
 #include "Bureaucrat.hpp"
 
 AForm::AForm(std::string name, int signGrade, int exeGrade): _name(name),
-							_signGrade(signGrade), _exeGrade(exeGrade)
+							_signGrade(signGrade), _exeGrade(exeGrade), _isSigned(false)
 {
 	try
 	{
 		if (signGrade > 150 || exeGrade > 150)
-		{
-			signGrade = -1;
 			throw(AForm::GradeTooLowException());
-		}
 		else if (signGrade < exeGrade)
-		{
-			signGrade = -1;
 			throw(AForm::GradeTooLowException());
-		}
 		else if (signGrade < 1 || exeGrade < 1)
-		{
-			signGrade = -1;
 			throw(AForm::GradeTooLowException());
-		}
 		else 
 			std::cout << *this << std::endl;
 	}

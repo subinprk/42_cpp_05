@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: siun <siun@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: subpark <subpark@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:56:05 by subpark           #+#    #+#             */
-/*   Updated: 2024/05/11 22:39:56 by siun             ###   ########.fr       */
+/*   Updated: 2024/05/16 15:52:39 by subpark          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int main()
 	Bureaucrat e("E", 2);
 	Bureaucrat f;
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
-	cout << f << endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	std::cout << d << std::endl;
+	std::cout << e << std::endl;
+	std::cout << f << std::endl;
 
 	a.GradeUp();
 	b.GradeDown();
@@ -34,11 +34,11 @@ int main()
 	d.GradeDown();
 	e.GradeUp();
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	std::cout << d << std::endl;
+	std::cout << e << std::endl;
 
 	a.GradeUp();
 	b.GradeDown();
@@ -46,11 +46,11 @@ int main()
 	d.GradeDown();
 	e.GradeUp();
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	std::cout << d << std::endl;
+	std::cout << e << std::endl;
 
 	a.GradeUp();
 	b.GradeDown();
@@ -58,11 +58,11 @@ int main()
 	d.GradeDown();
 	e.GradeUp();
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	std::cout << d << std::endl;
+	std::cout << e << std::endl;
 
 	a.GradeUp();
 	b.GradeDown();
@@ -70,11 +70,11 @@ int main()
 	d.GradeDown();
 	e.GradeUp();
 
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-	cout << d << endl;
-	cout << e << endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << c << std::endl;
+	std::cout << d << std::endl;
+	std::cout << e << std::endl;
 
 	return (0);
 }
